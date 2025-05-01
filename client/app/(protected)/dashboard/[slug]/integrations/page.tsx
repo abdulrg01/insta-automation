@@ -2,8 +2,6 @@ import { INTEGRATIONS } from "@/constant/page";
 import React from "react";
 import IntegrationCard from "./_components/integration-card/page";
 
-// type Props = {};
-
 const page = () => {
   return (
     <div className="flex justify-center">

@@ -6,8 +6,6 @@ import React from "react";
 import GradientButton from "../gradient-button";
 import { Button } from "@/components/ui/button";
 
-// type Props = {};
-
 const AutomationList = () => {
   const { pathname } = UsePaths();
   return (

@@ -1,5 +1,6 @@
 "use client";
 import { ThreeDMarquee } from "@/components/ui/3d-marquee";
+import Image from "next/image";
 
 export default function ThreeDMarqueeDemoSecond() {
   const images = [
@@ -48,13 +49,13 @@ export default function ThreeDMarqueeDemoSecond() {
     
       <div className="relative z-20 flex flex-wrap items-start gap-3 pt-4">
       <button className="rounded-md bg-black/10 text-black dark:text-black  text-sm font-medium backdrop-blur-sm transition-colors hover:bg-white/20 focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-black focus:outline-none">
-          <img src="/shadcn.png" className="rounded-lg w-12 h-12 text-black dark:text-black" alt="" />
+          <Image fill src="/shadcn.png" className="rounded-lg w-12 h-12 text-black dark:text-black" alt="" />
         </button>
         <button className="rounded-md bg-black/10 text-black dark:text-black text-sm font-medium backdrop-blur-sm transition-colors hover:bg-white/20 focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-black focus:outline-none">
-            <img src="/tailwind.jpg" className="rounded-lg w-12 h-12 text-black dark:text-black" alt="" />
+            <Image fill src="/tailwind.jpg" className="rounded-lg w-12 h-12 text-black dark:text-black" alt="" />
         </button>
         <button className="rounded-md bg-black/10 text-black dark:text-black text-sm font-medium backdrop-blur-sm transition-colors hover:bg-white/20 focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-black focus:outline-none">
-            <img src="/nextjs.png" className="rounded-lg w-12 h-12 text-black dark:text-black" alt="" />
+            <Image fill src="/nextjs.png" className="rounded-lg w-12 h-12 text-black dark:text-black" alt="" />
         </button>
       </div>
       {/* overlay */}

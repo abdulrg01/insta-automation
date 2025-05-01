@@ -1,7 +1,5 @@
 import React from "react";
-import PaymentCard from "./payment-card";
-
-// type Props = {};
+import PaymentCard from "./payment-card"
 
 const Billing = () => {
   return (

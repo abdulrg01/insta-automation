@@ -8,7 +8,7 @@ type Props = {
   strategy: "INSTAGRAM" | "CRM";
 };
 
-const IntegrationCard = ({ title, description, icon, strategy }: Props) => {
+const IntegrationCard = ({ title, description, icon }: Props) => {
   return (
     <div className="border-2 border-[#3352CC] rounded-2xl gap-x-5 p-5 flex items-center justify-between">
       {icon}

@@ -1,7 +1,7 @@
 type Props = {
-  type: "Free" | "Paid" | "Trial";
+  // type: "Free" | "Paid" | "Trial";
   children: React.ReactNode;
 };
-export const SubscriptionPlan = ({ children, type }: Props) => {
+export const SubscriptionPlan = ({ children }: Props) => {
   return children;
 };

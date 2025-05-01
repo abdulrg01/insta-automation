@@ -1,8 +1,6 @@
 import { Button } from "@/components/ui/button";
 import React from "react";
 
-// type Props = {};
-
 const PaymentButton = () => {
   return (
     <Button className="bg-gradient-to-br

@@ -44,7 +44,7 @@ export default function HeroCarousel() {
   // Auto-advance slides
   useEffect(() => {
     const interval = setInterval(() => {
-      goToNextSlide();
+      // goToNextSlide();
     }, 6000);
     return () => clearInterval(interval);
   }, [currentSlide]);

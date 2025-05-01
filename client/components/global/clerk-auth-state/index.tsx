@@ -10,8 +10,6 @@ import Loader from "../loader";
 import { Button } from "@/components/ui/button";
 import { User } from "lucide-react";
 
-// type Props = {};
-
 const ClerkAuthState = () => {
   return (
     <>

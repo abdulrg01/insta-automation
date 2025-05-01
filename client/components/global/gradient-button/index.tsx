@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import React from "react";
@@ -10,7 +9,7 @@ type Props = {
   className?: string;
 };
 
-const GradientButton = ({ children, type, href, className }: Props) => {
+const GradientButton = ({ children, type, className }: Props) => {
   const gradient =
     "bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-xl p-[2px]";
 
