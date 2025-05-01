@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Insta real",
     description: "Automate DMs and Comments on Instagram",
-    url: "https://instareal.ai",
+    url: "https://insta-automation-git-main-abdulrg01s-projects.vercel.app",
     siteName: "Insta real",
     images: [
       {
@@ -88,7 +88,7 @@ export const metadata: Metadata = {
   authors: [
     {
       name: "Insta real Team",
-      url: "https://instareal.ai",
+      url: "https://insta-automation-git-main-abdulrg01s-projects.vercel.app",
     },
   ],
   creator: "Insta real Team",
