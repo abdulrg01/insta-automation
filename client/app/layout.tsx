@@ -1,0 +1,120 @@
+import type { Metadata } from "next";
+import { Plus_Jakarta_Sans } from "next/font/google";
+import "./globals.css";
+import { ClerkProvider } from "@clerk/nextjs";
+import { ThemeProvider } from "../providers/theme-provider";
+import { Toaster } from "sonner";
+
+const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "Insta real",
+  description: "Automate DMs and Comments on Instagram",
+  icons: {
+    icon: "/assets/images/logo-icon.svg",
+    shortcut: "/assets/images/logo-icon.svg",
+    apple: "/apple-touch-icon.png",
+  },
+  openGraph: {
+    title: "Insta real",
+    description: "Automate DMs and Comments on Instagram",
+    url: "https://instareal.ai",
+    siteName: "Insta real",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "en-US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Insta real",
+    description: "Automate DMs and Comments on Instagram",
+    images: ["/og-image.png"],
+  },
+  appleWebApp: {
+    title: "Insta real",
+    statusBarStyle: "black-translucent",
+    capable: true,
+    startupImage: [
+      "/apple-touch-startup-image.png",
+      "/apple-touch-startup-image-2x.png",
+    ],
+  },
+  manifest: "/manifest.json",
+  themeColor: "#000000",
+  viewport: "width=device-width, initial-scale=1",
+  robots: {
+    index: true,
+    follow: true,
+    "max-snippet": -1,
+    "max-image-preview": "large",
+    "max-video-preview": -1,
+  },
+  alternates: {
+    canonical: "https://instareal.ai",
+    languages: {
+      "en-US": "/en",
+      "es-ES": "/es",
+      "fr-FR": "/fr",
+      "de-DE": "/de",
+    },
+  },
+  // verification: {
+  //   google: "google-site-verification=your-google-site-verification-code",
+  //   yandex: "yandex-verification: your-yandex-verification-code",
+  //   other: [
+  //     {
+  //       name: "Bing",
+  //       url: "https://www.bing.com/webmasters/verification/verification.ashx?siteMap=https://instareal.ai/sitemap.xml",
+  //     },
+  //   ],
+  // },
+  keywords: [
+    "Instagram automation",
+    "DM automation",
+    "comment automation",
+    "Instagram growth",
+    "social media marketing",
+    "Instagram tools",
+    "Instagram engagement",
+    "Instagram management",
+    "Instagram analytics",
+  ],
+  authors: [
+    {
+      name: "Insta real Team",
+      url: "https://instareal.ai",
+    },
+  ],
+  creator: "Insta real Team",
+  publisher: "Insta real Team",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <ClerkProvider>
+        <body suppressHydrationWarning className={jakarta.className}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+            <Toaster />
+          </ThemeProvider>
+        </body>
+      </ClerkProvider>
+    </html>
+  );
+}
