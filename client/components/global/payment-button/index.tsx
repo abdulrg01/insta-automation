@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
 import React from "react";
 
-type Props = {};
+// type Props = {};
 
-const PaymentButton = (props: Props) => {
+const PaymentButton = () => {
   return (
     <Button className="bg-gradient-to-br
      text-white 

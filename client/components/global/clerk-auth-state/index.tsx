@@ -10,9 +10,9 @@ import Loader from "../loader";
 import { Button } from "@/components/ui/button";
 import { User } from "lucide-react";
 
-type Props = {};
+// type Props = {};
 
-const ClerkAuthState = (props: Props) => {
+const ClerkAuthState = () => {
   return (
     <>
       <ClerkLoading>

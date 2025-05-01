@@ -6,9 +6,9 @@ import React from "react";
 import GradientButton from "../gradient-button";
 import { Button } from "@/components/ui/button";
 
-type Props = {};
+// type Props = {};
 
-const AutomationList = (props: Props) => {
+const AutomationList = () => {
   const { pathname } = UsePaths();
   return (
     <div className="flex flex-col gap-y-3">
