@@ -13,7 +13,9 @@ const AutomationBreadcrumb = ({ id }: Props) => {
         <p className="text-[#9B9CA0] truncate">Automations</p>
         <ChevronRight color="#9B9CA0" className="flex-shrink-0" />
         <span className="flex gap-x-3 items-center min-w-0">
-          <p className="text-[#9B9CA0] truncate">This is the automation title</p>
+          <p className="text-[#9B9CA0] truncate">
+            This is the automation title
+          </p>
           <span className="mr-4 cursor-pointer hover:opacity-75 duration-100 transition flex-shrink-0">
             <PencilIcon size={14} />
           </span>
@@ -25,10 +27,14 @@ const AutomationBreadcrumb = ({ id }: Props) => {
           All state are automatically saved
         </p>
         <div className="flex gap-x-5 flex-shrink-0">
-          <p className="text-secondary text-sm truncate min-w-0">Changes saved</p>
+          <p className="text-secondary text-sm truncate min-w-0">
+            Changes saved
+          </p>
           <p className="text-secondary text-sm truncate min-w-0">Undo | Redo</p>
         </div>
       </div>
+
+      {id && <p></p>}
 
       <ActivateAutomationButton />
     </div>
