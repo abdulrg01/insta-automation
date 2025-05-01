@@ -1,8 +1,10 @@
 import React from "react";
 
-type Props = {};
+type Props = {
+    id: string
+};
 
-const AutomationBreadcrumb = (props: Props) => {
+const AutomationBreadcrumb = ({ id }: Props) => {
   return <div>AutomationBreadcrumb</div>;
 };
 
