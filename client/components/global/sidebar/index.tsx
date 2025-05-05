@@ -3,7 +3,7 @@ import { navLinks } from "@/constant/page";
 import { UsePaths } from "@/hooks/user-nav";
 import Image from "next/image";
 import Link from "next/link";
-import ClerkAuthState from "../clerk-auth-state";
+// import ClerkAuthState from "../clerk-auth-state";
 import { HelpCircleIcon } from "lucide-react";
 import { SubscriptionPlan } from "../Subscription-plan";
 import UpgradeCard from "./upgrade";
@@ -16,7 +16,7 @@ const Sidebar = ({ slug }: Props) => {
   const { page } = UsePaths();
 
   return (
-    <aside className="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-[#09090B] border-r border-[#09090B] sm:translate-x-0 dark:bg-[#09090B] dark:border-gray-700">
+    <aside className="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-[#09090B] border-r border-[#09090B] lg:translate-x-0 dark:bg-[#09090B] dark:border-gray-700">
       <div className="h-full px-3 pb-4 overflow-y-auto bg-[#09090B] dark:bg-[#09090B]">
         <div className="h-full flex flex-col justify-between">
           <ul className="space-y-2 font-medium">
@@ -52,7 +52,7 @@ const Sidebar = ({ slug }: Props) => {
           </ul>
           <div className="mt-6 space-y-3 font-medium p-3">
             <div className="flex gap-x-2">
-              <ClerkAuthState />
+              {/* <ClerkAuthState /> */}
               <p className="text-[#9B9CA0] text-sm">Profile</p>
             </div>
             <div className="flex gap-x-3">

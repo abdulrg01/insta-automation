@@ -8,7 +8,7 @@ type Props = {
 
 const AutomationBreadcrumb = ({ id }: Props) => {
   return (
-    <div className="rounded-full w-full p-5 bg-[#18181B1A] flex items-center">
+    <div className="rounded-full w-full px-4 py-2 bg-[#18181B1A] flex items-center">
       <div className="flex items-center gap-x-3 min-w-0">
         <p className="text-[#9B9CA0] truncate">Automations</p>
         <ChevronRight color="#9B9CA0" className="flex-shrink-0" />
@@ -30,11 +30,8 @@ const AutomationBreadcrumb = ({ id }: Props) => {
           <p className="text-secondary text-sm truncate min-w-0">
             Changes saved
           </p>
-          <p className="text-secondary text-sm truncate min-w-0">Undo | Redo</p>
         </div>
       </div>
-
-      {id && <p></p>}
 
       <ActivateAutomationButton />
     </div>

@@ -2,15 +2,7 @@ import { Activity, Bell, Home, Instagram, Settings } from "lucide-react";
 import React from "react";
 import { FaSalesforce } from "react-icons/fa";
 import { v4 as uuid } from "uuid";
-
-type FieldProps = {
-  label: string;
-  id: string;
-};
-
-type SidebarProps = {
-  icon: string;
-} & FieldProps;
+import { IntegrationProps, PageIcons, SidebarProps } from "./types";
 
 export const PAGE_BREAD_CRUMBS: string[] = [
   "contact",
@@ -20,29 +12,20 @@ export const PAGE_BREAD_CRUMBS: string[] = [
   "settings",
 ];
 
-type PageIcons = {
-  [page in string]: React.ReactNode;
-};
-
-type IntegrationProps = {
-  title: string;
-  icon: React.ReactNode;
-  description: string;
-  strategy: 'INSTAGRAM' | 'CRM'
-}
-
 export const INTEGRATIONS: IntegrationProps[] = [
   {
     title: "Connect Instagram",
     icon: <Instagram />,
-    description: "Connect your Instagram account to automate posts and stories.",
-    strategy: 'INSTAGRAM'
+    description:
+      "Connect your Instagram account to automate posts and stories.",
+    strategy: "INSTAGRAM",
   },
   {
     title: "Connect Salesforce",
     icon: <FaSalesforce />,
-    description: "Integrate with Salesforce for enhanced customer relationship management.",
-    strategy: 'CRM'
+    description:
+      "Integrate with Salesforce for enhanced customer relationship management.",
+    strategy: "CRM",
   },
 ];
 
@@ -104,15 +87,6 @@ export const carouselImages = [
     style: "Fashion",
   },
 ];
-
-export interface Product {
-  id: number;
-  name: string;
-  // description: string;
-  price: number | string;
-  category: string;
-  image: string;
-}
 
 export const products = [
   {

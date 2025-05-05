@@ -4,7 +4,7 @@ import { UsePaths } from "@/hooks/user-nav";
 import Link from "next/link";
 import { HelpCircleIcon } from "lucide-react";
 import Image from "next/image";
-import ClerkAuthState from "../clerk-auth-state";
+// import ClerkAuthState from "../clerk-auth-state";
 import { SubscriptionPlan } from "../Subscription-plan";
 import UpgradeCard from "../sidebar/upgrade";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -96,7 +96,7 @@ export default function Navbar({ slug }: Props) {
                     </ul>
                     <div className="mt-6 text-sm space-y-3 font-medium p-3">
                       <div className="flex gap-x-2">
-                        <ClerkAuthState />
+                        {/* <ClerkAuthState /> */}
                         <p className="text-[#9B9CA0]">Profile</p>
                       </div>
                       <div className="flex gap-x-3">

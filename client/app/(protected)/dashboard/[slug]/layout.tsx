@@ -1,6 +1,5 @@
 import Navbar from "@/components/global/navbar";
 import Sidebar from "@/components/global/sidebar";
-import React from "react";
 
 type Props = {
   children: React.ReactNode;
@@ -8,6 +7,7 @@ type Props = {
 };
 
 const layout = ({ children, params }: Props) => {
+
   return (
     <div className="p-3">
       <Sidebar slug={params.slug} />

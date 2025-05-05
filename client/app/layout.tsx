@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "../providers/theme-provider";
 import { Toaster } from "sonner";
+import ReduxProvider from "@/lib/redux/providers";
+import { AuthProvider } from "@/components/auth-provider";
 
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
@@ -45,7 +46,7 @@ export const metadata: Metadata = {
       "/apple-touch-startup-image-2x.png",
     ],
   },
-  manifest: "/manifest.json",
+  // manifest: "/manifest.json",
   themeColor: "#000000",
   viewport: "width=device-width, initial-scale=1",
   robots: {
@@ -102,19 +103,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ClerkProvider>
-        <body suppressHydrationWarning className={jakarta.className}>
+      <body suppressHydrationWarning className={jakarta.className}>
+        <ReduxProvider>
           <ThemeProvider
             attribute="class"
             defaultTheme="dark"
             enableSystem
             disableTransitionOnChange
           >
-            {children}
+            <AuthProvider>{children}</AuthProvider>
             <Toaster />
           </ThemeProvider>
-        </body>
-      </ClerkProvider>
+        </ReduxProvider>
+      </body>
     </html>
   );
 }

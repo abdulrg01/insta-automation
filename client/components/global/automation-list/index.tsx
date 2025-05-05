@@ -5,9 +5,25 @@ import Link from "next/link";
 import React from "react";
 import GradientButton from "../gradient-button";
 import { Button } from "@/components/ui/button";
+import { useGetUserAutomationsQuery } from "@/lib/redux/services/automation";
+import CreateAutomation from "../create-automation";
 
 const AutomationList = () => {
   const { pathname } = UsePaths();
+  const { data, isSuccess } = useGetUserAutomationsQuery();
+console.log(data);
+
+  if (isSuccess) {
+    if (!data) {
+      return (
+        <div className="h-[70vh] flex justify-center items-center flex-col gap-y-3">
+          <h3 className="text-lg text-gray-400">No automation Created</h3>
+          <CreateAutomation />
+        </div>
+      );
+    }
+  }
+
   return (
     <div className="flex flex-col gap-y-3">
       <Link
@@ -46,7 +62,9 @@ const AutomationList = () => {
           >
             Smart AI
           </GradientButton>
-          <Button className="bg-background hover:bg-background text-white">Standard</Button>
+          <Button className="bg-background hover:bg-background text-white">
+            Standard
+          </Button>
         </div>
       </Link>
     </div>
