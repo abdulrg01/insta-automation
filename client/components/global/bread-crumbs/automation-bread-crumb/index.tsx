@@ -5,7 +5,7 @@ import ActivateAutomationButton from "../../activate-automation-button";
 type Props = {
   id: string;
 };
-
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const AutomationBreadcrumb = ({ id }: Props) => {
   return (
     <div className="rounded-full w-full px-4 py-2 bg-[#18181B1A] flex items-center">

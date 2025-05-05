@@ -90,6 +90,7 @@ export default function SignUp() {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { confirmPassword, ...registerData } = values;
       const { token } = await register(registerData).unwrap();
       dispatch(setCredentials({ token }));
@@ -100,6 +101,7 @@ export default function SignUp() {
       });
 
       toast("Your account has been successfully created.");
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       toast("There was a problem creating your account.");      
     }
@@ -185,6 +187,7 @@ export default function SignUp() {
                 <FormField
                   control={form.control}
                   name="password"
+                  // eslint-disable-next-line @typescript-eslint/no-unused-vars
                   render={({ field: { onChange, ...field } }) => (
                     <FormItem>
                       <FormLabel>Password</FormLabel>

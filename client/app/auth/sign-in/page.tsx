@@ -72,6 +72,7 @@ export default function SignIn() {
       });
 
       toast("You have successfully signed in.");
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       toast("Please check your credentials and try again.");
     }

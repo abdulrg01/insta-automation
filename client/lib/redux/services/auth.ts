@@ -17,6 +17,7 @@ const baseQuery = fetchBaseQuery({
   credentials: "include",
 });
 
+// @typescript-eslint/no-explicit-any
 const baseQueryWithReauth = async (args: any, api: any, extraOptions: any) => {
   let result = await baseQuery(args, api, extraOptions);
 
