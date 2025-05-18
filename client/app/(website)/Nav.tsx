@@ -72,7 +72,7 @@ export function Nav() {
                     size="sm"
                     className="relative overflow-hidden bg-gradient-to-r from-[#9685DB] to-[#CC3BD4] text-white dark:from-[#9685DB] dark:to-[#CC3BD4] rounded-lg shadow-md shadow-neutral-800/20 dark:shadow-black/30 px-4 py-2 font-medium tracking-wide transition-all duration-300 ease-in-out hover:shadow-lg hover:scale-[1.02] hover:from-[#9685DB] hover:to-[#CC3BD4] dark:hover:opacity-100"
                     asChild
-                    onClick={() => router.push(`/dashboard/${user._id}`)}
+                    onClick={() => router.push(`/dashboard/${user.name}`)}
                   >
                     <span className="cursor-pointer">Dashboard</span>
                   </Button>

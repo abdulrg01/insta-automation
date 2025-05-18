@@ -24,12 +24,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     if (token) {
       const decoded: DecodedToken = jwtDecode(token);
+
       const user = {
         _id: decoded.UserInfo.userId,
         name: decoded.UserInfo.name,
         email: decoded.UserInfo.email,
-      };
-      
+      }
+
       dispatch(setCredentials({ token }));
       dispatch(setUser({ user }));
     }

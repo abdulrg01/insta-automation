@@ -3,7 +3,6 @@ import { navLinks } from "@/constant/page";
 import { UsePaths } from "@/hooks/user-nav";
 import Image from "next/image";
 import Link from "next/link";
-// import ClerkAuthState from "../clerk-auth-state";
 import { HelpCircleIcon } from "lucide-react";
 import { SubscriptionPlan } from "../Subscription-plan";
 import UpgradeCard from "./upgrade";

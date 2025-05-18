@@ -10,6 +10,7 @@ interface Integration {
 
 interface Subscription {
   _id: string;
+  plan: string
 }
 interface Automation {
   _id: string;
@@ -23,7 +24,7 @@ export interface User {
   createdAt?: string;
   integrations: Integration[];
   automation: Automation[] | null;
-  subscription: Subscription | null;
+  subscription: Subscription;
 }
 
 export interface AuthState {

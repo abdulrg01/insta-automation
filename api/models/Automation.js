@@ -3,44 +3,36 @@ const mongoose = require("mongoose");
 const Trigger = mongoose.Schema({
   type: {
     type: String,
-    enum: ["smartAI", "message"],
-    required: true,
+    enum: ["COMMENT", "DM"],
   },
   automationId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Automation",
-    required: true,
   },
 });
 
-const Listeners = mongoose.Schema({
+const Listener = mongoose.Schema({
   type: {
     type: String,
-    enum: ["smartAI", "message"],
-    required: true,
+    enum: ["SMARTAI", "MESSAGE"],
   },
   automationId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Automation",
-    required: true,
   },
   prompt: {
     type: String,
-    required: true,
   },
   commentReply: {
     type: String,
-    required: true,
   },
   dmCount: {
     type: Number,
     default: 0,
-    required: true,
   },
   commentCount: {
     type: Number,
     default: 0,
-    required: true,
   },
 });
 
@@ -56,12 +48,11 @@ const Post = mongoose.Schema({
   },
   mediaType: {
     type: String,
-    enum: ["image", "video", "carousel_album"],
+    enum: ["IMAGE", "VIDEO", "CAROUSEL_ALBUM"],
   },
   automationId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Automation",
-    required: true,
   },
 });
 
@@ -74,7 +65,6 @@ const Dms = mongoose.Schema({
   },
   message: {
     type: String,
-    required: true,
   },
   createdAt: {
     type: Date,
@@ -83,25 +73,27 @@ const Dms = mongoose.Schema({
   automationId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Automation",
-    required: true,
   },
 });
 
-const keyword = mongoose.Schema({
-  word: {
-    type: String,
-  },
-  automationId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Automation",
-    required: true,
-  },
-});
+// const keyword = mongoose.Schema({
+// word: {
+//   type: String,
+// },
+//   automationId: {
+//     type: mongoose.Schema.Types.ObjectId,
+//     ref: "Automation",
+//   },
+// });
 
 const automation = new mongoose.Schema({
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    require: true,
+  },
   name: {
     type: String,
-    required: true,
   },
   createdAt: {
     type: Date,
@@ -112,15 +104,15 @@ const automation = new mongoose.Schema({
     default: true,
   },
   trigger: [Trigger],
-  listeners: [Listeners],
+  listener: [Listener],
   posts: [Post],
   dms: [Dms],
-  keywords: [keyword],
-  userId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
-    require: true,
-  }, 
+  // keywords: [keyword],
+  keywords: [
+    {
+      word: String,
+    },
+  ],
 });
 
 module.exports = mongoose.model("Automation", automation);

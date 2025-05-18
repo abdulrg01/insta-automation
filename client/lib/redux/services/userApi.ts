@@ -1,6 +1,13 @@
-import { AuthResponse, LoginRequest, RefreshInstagramStatus, RegisterRequest, User } from "@/constant/types/auth";
+import {
+  AuthResponse,
+  LoginRequest,
+  RefreshInstagramStatus,
+  RegisterRequest,
+  User,
+} from "@/constant/types/auth";
 import { authApi } from "./auth";
 import { setCredentials, setUser } from "../slices/authSlice";
+import { InstagramPostsProps } from "@/constant/types";
 
 const userApi = authApi.injectEndpoints({
   endpoints: (builder) => ({
@@ -18,8 +25,11 @@ const userApi = authApi.injectEndpoints({
         body: credentials,
       }),
     }),
-    getUser: builder.query<User, string>({
-      query: (id) => `/users/${id}`,
+    getUser: builder.query<User, void>({
+      query: () => ({
+        url: `/users`,
+        method: "GET",
+      }),
     }),
     refreshInstagram: builder.query<RefreshInstagramStatus, void>({
       query: () => `/users/refresh-instagram`,
@@ -47,6 +57,12 @@ const userApi = authApi.injectEndpoints({
         method: "POST",
       }),
     }),
+    getPosts: builder.query<InstagramPostsProps[], void>({
+      query: () => ({
+        url: "/users/get-posts",
+        method: "GET",
+      }),
+    }),
   }),
 });
 
@@ -57,4 +73,5 @@ export const {
   useRefreshMutation,
   useLogoutMutation,
   useRefreshInstagramQuery,
+  useGetPostsQuery,
 } = userApi;

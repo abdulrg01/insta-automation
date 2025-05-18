@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const IntegrationSchema = new Schema({
+const IntegrationSchema = new mongoose.Schema({
   userId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
@@ -24,6 +24,10 @@ const IntegrationSchema = new Schema({
     type: String,
     require: true,
   },
+  username: {
+    type: String,
+    require: true,
+  },
   expiresAt: {
     type: Date,
     require: true,
@@ -34,4 +38,4 @@ const IntegrationSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model("integration", IntegrationSchema);
+module.exports = mongoose.model("Integration", IntegrationSchema);
